@@ -8,19 +8,19 @@
          <div class="collapse navbar-collapse" id="navbarNav">
              <ul class="navbar-nav ms-auto">
                  <li class="nav-item">
-                     <a class="nav-link active" href="#">Home</a>
+                     <a class="nav-link active" href="#home">Home</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="#">Notes</a>
+                     <a class="nav-link" href="#about">About</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="#">Tasks</a>
+                     <a class="nav-link" href="#notes">Notes</a>
                  </li>
                  <li class="nav-item">
                      <a class="nav-link" href="#">Quiz</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="#">Profile</a>
+                     <a class="nav-link" href="#contact">Contact</a>
                  </li>
              </ul>
          </div>

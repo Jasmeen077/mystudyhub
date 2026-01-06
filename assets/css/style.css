@@ -1,4 +1,16 @@
-.box-color{
-    background-color: #e2e5d7 !important;
+.note-card {
+    border: none;
+    background: #e2e5d7;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
+.note-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.note-card img {
+    height: 200px;
+    object-fit: cover;
 }

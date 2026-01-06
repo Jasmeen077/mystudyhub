@@ -23,7 +23,7 @@
                 background-size: cover; 
                 background-position: center; 
                 background-repeat: no-repeat;
-                opacity:0.8;">
+                opacity:0.8;" id="home">
         <div class="container mt-5 p-5">
             <h1 class="display-4 " style="color:black;"><b>Welcome to My Study Hub</b></h1>
             <p class="lead" style="color:black;"><b>Organize your notes, manage tasks, and take fun quizzes—all in one place!</b></p>
@@ -66,35 +66,110 @@
     </section>
 
     <!--Notes Section-->
-    <section id="notes" class="mt-5">
-        <div class="container mt-5">
-            <h2 class="text-center">Notes</h2>
-            <p class="text-center">Find categories wise notes here</p>
-            <hr class="mx-auto" style="width:200px;">
+    <section id="notes" class="py-5" style="background:#f8f9fa;">
+        <div class="container">
+            <h2 class="text-center fw-bold">Notes</h2>
+            <p class="text-center text-muted">Find category-wise notes here</p>
+            <hr class="mx-auto mb-5" style="width:120px; height:3px; background:#198754;">
 
-            <div class="row justify-content-center text-center g-5">
+            <div class="row justify-content-center g-4">
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="shadow-sm p-3"  style="border: 1px dotted black;background-color:#e2e5d7">
-                        <img src="assets/img/child.jpg" alt="" class="img-fluid shadow mb-2">
-                        <p>Hindi Notes</p>
-                        <a href="javascript:void(0);" class="btn btn-sm btn-success">View</a>
+                <!-- Hindi Notes -->
+                <div class="col-lg-4 col-md-6 p-3">
+                    <div class="card note-card h-100 text-center">
+                        <img src="assets/img/hindi.jpg" class="card-img-top" alt="Hindi Notes">
+                        <div class="card-body">
+                            <h5 class="card-title">Hindi Notes</h5>
+                            <a href="#" class="btn btn-success btn-sm px-4">View Notes</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6" >
-                    <div class="shadow-sm p-3" style="border: 1px dotted black;background-color:#e2e5d7">
-                        <img src="assets/img/child.jpg" alt="" class="img-fluid shadow mb-2">
-                        <p>English Notes</p>
-                        <a href="javascript:void(0);" class="btn btn-sm btn-success">View</a>
+                <!-- English Notes -->
+                <div class="col-lg-4 col-md- p-3">
+                    <div class="card note-card h-100 text-center">
+                        <img src="assets/img/english.jpg" class="card-img-top" alt="English Notes">
+                        <div class="card-body">
+                            <h5 class="card-title">English Notes</h5>
+                            <a href="#" class="btn btn-success btn-sm px-4">View Notes</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="shadow-sm p-3"  style="border: 1px dotted black;background-color:#e2e5d7">
-                        <img src="assets/img/child.jpg" alt="" class="img-fluid shadow mb-2">
-                        <p>Maths Notes</p>
-                        <a href="javascript:void(0);" class="btn btn-sm btn-success">View</a>
+                <!-- Maths Notes -->
+                <div class="col-lg-4 col-md- p-3">
+                    <div class="card note-card h-100 text-center">
+                        <img src="assets/img/maths.jpg" class="card-img-top" alt="Maths Notes">
+                        <div class="card-body">
+                            <h5 class="card-title">Maths Notes</h5>
+                            <a href="#" class="btn btn-success btn-sm px-4">View Notes</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Contact Section-->
+    <section id="contact" class="py-5" style="background:#f8f9fa;">
+        <div class="container">
+            <h2 class="text-center fw-bold">Contact</h2>
+            <p class="text-center text-muted">Get in touch with us</p>
+            <hr class="mx-auto mb-5" style="width:120px; height:3px; background:#198754;">
+
+            <div class="row align-items-center g-4">
+
+                <!-- Image -->
+                <div class="col-lg-6 text-center">
+                    <img src="assets/img/contact.jpg"
+                        alt="Contact Image"
+                        class="img-fluid shadow"
+                        style="width:550px;height:500px;">
+                </div>
+
+                <!-- Form -->
+                <div class="col-lg-6">
+                    <div class="card shadow border-0">
+                        <div class="card-header bg-success text-white text-center fw-bold">
+                            Get In Touch
+                        </div>
+
+                        <div class="card-body">
+                            <form>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Address</label>
+                                    <textarea class="form-control" rows="3" placeholder="Enter your address"></textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label">City</label>
+                                    <select class="form-select">
+                                        <option selected>Select city</option>
+                                        <option>Delhi</option>
+                                        <option>Kanpur</option>
+                                        <option>Jhansi</option>
+                                        <option>Katni</option>
+                                    </select>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button class="btn btn-success">Send Message</button>
+                                </div>
+
+                            </form>
+                        </div>
                     </div>
                 </div>
 
