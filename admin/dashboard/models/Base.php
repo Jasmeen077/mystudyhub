@@ -34,11 +34,10 @@ class Base extends Config
     // login admin
     public function loginAdmin($email, $password)
     {
-        if(empty($email) || empty($password))
-        {
+        if (empty($email) || empty($password)) {
             return false;
         }
-        
+
         $stmt = $this->conn->prepare("SELECT * FROM admin WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -52,7 +51,5 @@ class Base extends Config
         }
         return false;
     }
-
-    //add about 
 
 }
