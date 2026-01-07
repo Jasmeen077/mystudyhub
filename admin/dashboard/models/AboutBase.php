@@ -161,7 +161,9 @@ class AboutBase extends Config
         }
 
         foreach ($params as $key => $value) {
-            $params[$key] = mysqli_real_escape_string($this->conn, $value);
+            if (is_string($value)) {
+                $params[$key] = $this->conn->real_escape_string($value);
+            }
         }
 
         $columns = implode(",", array_keys($params));
