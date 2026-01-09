@@ -13,6 +13,8 @@ if (isset($_POST['add_notes'])) {
 }
 $subject = $notes->getsubjects();
 $class = $notes->getClasses();
+// $allNotes = $notes->getAllNotes();
+$getname = $notes->getNames();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,7 +151,7 @@ $class = $notes->getClasses();
                                             <div class="mb-3">
                                                 <label class="form-label">Select Subject</label>
                                                 <select name="sid" class="form-control">
-                                                   <option value="">Select Subject</option>
+                                                    <option value="">Select Subject</option>
                                                     <?php
                                                     if (!empty($subject) && is_array($subject)) {
                                                         foreach ($subject as $value) {
@@ -219,7 +221,55 @@ $class = $notes->getClasses();
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
+        <div class="container">
+            <div class="card shadow-sm border-1">
+                <h3 class="p-2 text-center"><b>All Notes</b></h3>
+                <hr class="mx-auto mb-5 mt-2" style="width:120px; height:3px; background:#198754;">
+
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Chapter Name</th>
+                                <th>Topic Name</th>
+                                <th>Subject</th>
+                                <th>Class</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         <?php
+                         if(!empty($getname) && is_array($getname))
+                         {
+                            foreach ($getname as $value) {
+                              ?>
+                              <tr>
+                                <td>
+                                    <?= $value['chapter_name']; ?>
+                                </td>
+                                <td>
+                                     <?= $value['topic_name']; ?>
+                                </td>
+                                <td>
+                                     <?= $value['name']; ?>
+                                </td>
+                                <td>
+                                     <?= $value['classroom']; ?>
+                                </td>
+                                <td>
+                                    <a href="#" class="">View</a>
+                                </td>
+                              </tr>
+                              <?php
+                            }
+                         }
+                         ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 

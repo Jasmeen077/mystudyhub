@@ -69,14 +69,14 @@ class AboutController extends AboutBase
     //get subjects
     public function getsubjects()
     {
-        $subjects = $this->task->getCategories("subjects");
+        $subjects = $this->task->getAllData("subjects");
         return $subjects;
     }
 
     //get classes
     public function getClasses()
     {
-        $classes = $this->task->getCategories("classrooms");
+        $classes = $this->task->getAllData("classrooms");
         return $classes;
     }
 
@@ -94,5 +94,18 @@ class AboutController extends AboutBase
         $this->task->addNotes("notes", $_POST, $image, $pdf);
         header("Location: ../views/notes.php");
         exit();
+    }
+
+    //get all notes
+    public function getAllNotes()
+    {
+        $allnotes = $this->task->getAllData("notes");
+        return $allnotes;
+    }
+
+    //get names
+    public function getNames()
+    {
+        return $this->task->getNames();
     }
 }

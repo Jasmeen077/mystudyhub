@@ -176,7 +176,7 @@ class AboutBase extends Config
 
 
     //get categories
-    public function getCategories($table, $params = [], $where = [])
+    public function getAllData($table, $params = [], $where = [])
     {
         // Columns
         if (!empty($params)) {
@@ -204,5 +204,30 @@ class AboutBase extends Config
         } else {
             return [];
         }
+    }
+
+    // get name by id 
+    public function getNames()
+    {
+
+        $query = "
+        SELECT 
+            n.chapter_name,
+            n.topic_name,
+            s.name,
+            c.name AS classroom
+        FROM notes n
+        LEFT JOIN subjects s ON n.sid = s.id
+        LEFT JOIN classrooms c ON n.cid = c.id
+    ";
+
+
+        $result = $this->conn->query($query);
+
+        if ($result && $result->num_rows > 0) {
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        return [];
     }
 }
