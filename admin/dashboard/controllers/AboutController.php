@@ -1,5 +1,5 @@
 <?php
-include "../models/AboutBase.php";
+include_once __DIR__ . '/../models/AboutBase.php';
 class AboutController extends AboutBase
 {
     private $task;
@@ -107,5 +107,35 @@ class AboutController extends AboutBase
     public function getNames()
     {
         return $this->task->getNames();
+    }
+ 
+    //for contact
+    public function addContactDetails()
+    {
+        if(!isset($_POST['submit_contact']))
+        {
+            return;
+        }
+
+        unset($_POST['submit_contact']);
+       $result = $this->task->addContact("contact_form",$_POST);
+       if($result)
+       {
+          echo "<script>alert('Thankyou for contacting us ');</script>";
+          header("Location: index.php");
+          exit();
+       }else{
+        echo "<script>alert('Something went wrong');</script>";
+          header("Location: index.php");
+          exit();
+       }
+        
+    }
+
+    //get contact details
+    public function getContactData()
+    {
+        $allcontactData = $this->task->getAllData("contact_form");
+        return $allcontactData;
     }
 }

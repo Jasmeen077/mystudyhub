@@ -260,7 +260,9 @@ $getname = $notes->getNames();
                                      <?= $value['classroom']; ?>
                                 </td>
                                 <td>
-                                    <a href="#" class="">View</a>
+                                    <a href="view.php?id" class="btn btn-sm btn-primary"><i class="bi bi-eye-fill fs-6"></i></a>
+                                    <a href="#" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square fs-6"></i></a>
+                                    <a href="#" class="btn btn-sm btn-danger"><i class="bi bi-trash fs-6"></i></a>
                                 </td>
                               </tr>
                               <?php

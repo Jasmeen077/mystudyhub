@@ -1,5 +1,5 @@
 <?php
-include "../config/Config.php";
+include_once __DIR__ . '/../config/Config.php';
 
 class AboutBase extends Config
 {
@@ -229,5 +229,30 @@ class AboutBase extends Config
         }
 
         return [];
+    }
+
+    //submit contact 
+    public function addContact($table, $params = [])
+    {
+        $name = $params['name'];
+        $email = $params['email'];
+        $address = $params['address'];
+        $city = $params['city'];
+
+        if (empty($name) || empty($email) || empty($address) || empty($city)) {
+            return false;
+        }
+
+        // seperate columns and keys
+        $columns = implode(",", array_keys($params));
+        $value = implode("','", array_values($params));
+
+        $sql = "INSERT INTO $table($columns) VALUES('$value')";
+        $result = $this->conn->query($sql);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

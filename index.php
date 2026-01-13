@@ -7,6 +7,13 @@
     <title>Home | My Study Hub</title>
     <?php
     include "link.php";
+    include "admin/dashboard/config/Config.php";
+    include "admin/dashboard/models/AboutBase.php";
+    include "admin/dashboard/controllers/AboutController.php";
+    $contact = new AboutController();
+    if (isset($_POST['submit_contact'])) {
+        $contact->addContactDetails();
+    }
     ?>
 </head>
 
@@ -136,36 +143,36 @@
                         </div>
 
                         <div class="card-body">
-                            <form>
+                            <form method="POST" action="">
 
                                 <div class="mb-3">
                                     <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your name">
+                                    <input type="text" class="form-control" placeholder="Enter your name" name="name">
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                    <input type="email" class="form-control" placeholder="Enter your email" name="email">
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label">Address</label>
-                                    <textarea class="form-control" rows="3" placeholder="Enter your address"></textarea>
+                                    <textarea class="form-control" rows="3" placeholder="Enter your address" name="address"></textarea>
                                 </div>
 
                                 <div class="mb-4">
                                     <label class="form-label">City</label>
-                                    <select class="form-select">
-                                        <option selected>Select city</option>
-                                        <option>Delhi</option>
-                                        <option>Kanpur</option>
-                                        <option>Jhansi</option>
-                                        <option>Katni</option>
+                                    <select class="form-select" name="city" required>
+                                        <option value="">Select city</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="kanpur">Kanpur</option>
+                                        <option value="jhansi">Jhansi</option>
+                                        <option value="katni">Katni</option>
                                     </select>
                                 </div>
 
                                 <div class="d-grid">
-                                    <button class="btn btn-success">Send Message</button>
+                                    <button type="submit" class="btn btn-success" name="submit_contact">Send Message</button>
                                 </div>
 
                             </form>
